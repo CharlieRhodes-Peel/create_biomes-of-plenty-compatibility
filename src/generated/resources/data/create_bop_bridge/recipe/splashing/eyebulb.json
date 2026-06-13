@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:eyebulb"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:spider_eye"
+    }
+  ]
+}

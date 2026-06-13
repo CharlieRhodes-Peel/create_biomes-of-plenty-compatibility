@@ -13,5 +13,10 @@
 
   "item.create_bop_bridge.rose_quartz_nugget": "Rose Quartz Nugget",
   "item.create_bop_bridge.sulfur": "Sulfur",
-  "itemGroup.create_bop_bridge": "Create-BoP Bridge"
+  "item.create_bop_bridge.sulfuric_bone_meal": "Sulfuric Bone Meal",
+  "itemGroup.create_bop_bridge": "Create-BoP Bridge",
+
+  "block.create_bop_bridge.sulfuric_acid": "Sulfuric Acid",
+  "item.create_bop_bridge.sulfuric_acid_bucket": "Bucket of Sulfuric Acid",
+  "fluid_type.create_bop_bridge.sulfuric_acid_type": "Sulfuric Acid"
 }

@@ -1,5 +1,11 @@
 package com.milkski.createbopbridge;
 
+import com.milkski.createbopbridge.fluids.ModFluidTypes;
+import com.milkski.createbopbridge.fluids.ModFluids;
+import com.milkski.createbopbridge.fluids.SulfuricAcidBlock;
+import com.milkski.createbopbridge.items.SulfuricBoneMealItem;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.LiquidBlock;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -7,10 +13,6 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -51,6 +53,30 @@ public class CreateBopCompatibilityMod {
     // ------- ITEMS ------
     public static final DeferredItem<Item> ROSE_QUARTZ_NUGGET = ITEMS.registerSimpleItem("rose_quartz_nugget", new Item.Properties());
     public static final DeferredItem<Item> SULFUR = ITEMS.registerSimpleItem("sulfur", new Item.Properties());
+    public static final DeferredItem<Item> SULFURIC_BONE_MEAL = ITEMS.register("sulfuric_bone_meal", () -> new SulfuricBoneMealItem(new Item.Properties()));
+
+
+    // -------- Fluid ------
+    // LiquidBlock - the in-world block that holds the fluid
+    public static final DeferredBlock<LiquidBlock> SULFURIC_ACID_BLOCK =
+            BLOCKS.register("sulfuric_acid",
+                    () -> new SulfuricAcidBlock(ModFluids.SULFURIC_ACID_SOURCE.get(),
+                            BlockBehaviour.Properties.of()
+                                    .replaceable()
+                                    .noCollission()
+                                    .strength(100f)
+                                    .pushReaction(net.minecraft.world.level.material.PushReaction.DESTROY)
+                                    .noLootTable()
+                                    .liquid()
+                                    .sound(net.minecraft.world.level.block.SoundType.EMPTY)));
+
+    // BucketItem - what you carry the fluid around in
+    public static final DeferredItem<BucketItem> SULFURIC_ACID_BUCKET =
+            ITEMS.register("sulfuric_acid_bucket",
+                    () -> new BucketItem(ModFluids.SULFURIC_ACID_SOURCE.get(),
+                            new Item.Properties()
+                                    .craftRemainder(net.minecraft.world.item.Items.BUCKET)
+                                    .stacksTo(1)));
 
 
     // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
@@ -61,6 +87,8 @@ public class CreateBopCompatibilityMod {
             .displayItems((parameters, output) -> {
                 output.accept(ROSE_QUARTZ_NUGGET.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
                 output.accept(SULFUR.get());
+                output.accept(SULFURIC_BONE_MEAL.get());
+                output.accept(SULFURIC_ACID_BUCKET);
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -75,6 +103,10 @@ public class CreateBopCompatibilityMod {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+
+        //Registers Fluids
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.

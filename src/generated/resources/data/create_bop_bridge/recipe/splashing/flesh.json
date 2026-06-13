@@ -7,7 +7,7 @@
   ],
   "results": [
     {
-      "chance": 0.8,
+      "chance": 0.75,
       "id": "minecraft:rotten_flesh"
     },
     {
@@ -25,6 +25,10 @@
     {
       "chance": 0.05,
       "id": "minecraft:mutton"
+    },
+    {
+      "chance": 0.05,
+      "id": "minecraft:spider_eye"
     }
   ]
 }
