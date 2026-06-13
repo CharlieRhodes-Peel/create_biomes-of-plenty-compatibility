@@ -6,9 +6,19 @@ import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 
 @EventBusSubscriber(modid = CreateBopCompatibilityMod.MODID)
 public class ModEvents {
+
+    public static final ResourceKey<DamageType> SULFURIC_ACID_DAMAGE =
+            ResourceKey.create(Registries.DAMAGE_TYPE,
+                    ResourceLocation.fromNamespaceAndPath(
+                            CreateBopCompatibilityMod.MODID, "sulfuric_acid"));
 
     @SubscribeEvent
     public static void onEntityTick(EntityTickEvent.Post event) {
@@ -20,7 +30,11 @@ public class ModEvents {
                 || entity.isInFluidType(ModFluids.SULFURIC_ACID_SOURCE.get().getFluidType());
 
         if (inAcid && entity.tickCount % 10 == 0) {  // damage every 0.5s
-            entity.hurt(entity.damageSources().magic(), 2.0f);  // 1 heart per tick
+            DamageSource acidDamage = new DamageSource(
+                    entity.level().registryAccess()
+                            .registryOrThrow(Registries.DAMAGE_TYPE)
+                            .getHolderOrThrow(SULFURIC_ACID_DAMAGE));
+            entity.hurt(acidDamage, 2.0f);
         }
     }
 }

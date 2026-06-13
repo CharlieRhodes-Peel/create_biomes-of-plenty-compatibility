@@ -18,5 +18,8 @@
 
   "block.create_bop_bridge.sulfuric_acid": "Sulfuric Acid",
   "item.create_bop_bridge.sulfuric_acid_bucket": "Bucket of Sulfuric Acid",
-  "fluid_type.create_bop_bridge.sulfuric_acid_type": "Sulfuric Acid"
+  "fluid_type.create_bop_bridge.sulfuric_acid_type": "Sulfuric Acid",
+
+  "death.attack.sulfuric_acid": "%1$s dissolved in sulfuric acid",
+  "death.attack.sulfuric_acid.player": "%1$s dissolved in sulfuric acid while trying to escape %2$s"
 }

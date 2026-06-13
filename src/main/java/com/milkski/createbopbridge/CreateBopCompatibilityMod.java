@@ -54,6 +54,10 @@ public class CreateBopCompatibilityMod {
     public static final DeferredItem<Item> ROSE_QUARTZ_NUGGET = ITEMS.registerSimpleItem("rose_quartz_nugget", new Item.Properties());
     public static final DeferredItem<Item> SULFUR = ITEMS.registerSimpleItem("sulfur", new Item.Properties());
     public static final DeferredItem<Item> SULFURIC_BONE_MEAL = ITEMS.register("sulfuric_bone_meal", () -> new SulfuricBoneMealItem(new Item.Properties()));
+    public static final DeferredItem<Item> WHITE_SANDPAPER = ITEMS.registerSimpleItem("white_sandpaper", new Item.Properties());
+    public static final DeferredItem<Item> ORANGE_SANDPAPER = ITEMS.registerSimpleItem("orange_sandpaper", new Item.Properties());
+    public static final DeferredItem<Item> BLACK_SANDPAPER = ITEMS.registerSimpleItem("black_sandpaper", new Item.Properties());
+
 
 
     // -------- Fluid ------
@@ -89,6 +93,9 @@ public class CreateBopCompatibilityMod {
                 output.accept(SULFUR.get());
                 output.accept(SULFURIC_BONE_MEAL.get());
                 output.accept(SULFURIC_ACID_BUCKET);
+                output.accept(WHITE_SANDPAPER);
+                output.accept(ORANGE_SANDPAPER);
+                output.accept(BLACK_SANDPAPER);
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
