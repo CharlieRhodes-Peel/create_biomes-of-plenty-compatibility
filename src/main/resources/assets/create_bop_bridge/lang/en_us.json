@@ -1,5 +1,5 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
+  "itemGroup.examplemod": "Don't know how to remove this TAB yet",
   "block.examplemod.example_block": "Example Block",
   "item.examplemod.example_item": "Example Item",
 
@@ -9,5 +9,8 @@
   "examplemod.configuration.items": "Item List",
   "examplemod.configuration.logDirtBlock": "Log Dirt Block",
   "examplemod.configuration.magicNumberIntroduction": "Magic Number Text",
-  "examplemod.configuration.magicNumber": "Magic Number"
+  "examplemod.configuration.magicNumber": "Magic Number",
+
+  "item.create_bop_bridge.rose_quartz_nugget": "Rose Quartz Nugget",
+  "itemGroup.create_bop_bridge": "Create-BoP Bridge"
 }
