@@ -1,0 +1,14 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:porous_flesh"
+    }
+  ],
+  "results": [
+    {
+      "chance": 0.125,
+      "id": "minecraft:rotten_flesh"
+    }
+  ]
+}

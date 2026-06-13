@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:white_sandstone"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "count": 1,
+      "id": "biomesoplenty:white_sand"
+    }
+  ]
+}

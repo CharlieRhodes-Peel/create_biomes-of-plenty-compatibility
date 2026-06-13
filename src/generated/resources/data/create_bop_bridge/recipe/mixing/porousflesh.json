@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:porous_flesh"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "biomesoplenty:blood"
+    }
+  ],
+  "results": [
+    {
+      "id": "biomesoplenty:flesh"
+    }
+  ]
+}

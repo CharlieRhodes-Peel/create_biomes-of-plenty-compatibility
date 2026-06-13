@@ -12,5 +12,6 @@
   "examplemod.configuration.magicNumber": "Magic Number",
 
   "item.create_bop_bridge.rose_quartz_nugget": "Rose Quartz Nugget",
+  "item.create_bop_bridge.sulfur": "Sulfur",
   "itemGroup.create_bop_bridge": "Create-BoP Bridge"
 }

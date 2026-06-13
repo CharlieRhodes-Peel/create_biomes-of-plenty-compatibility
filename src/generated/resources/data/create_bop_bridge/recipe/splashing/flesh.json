@@ -1,0 +1,30 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:flesh"
+    }
+  ],
+  "results": [
+    {
+      "chance": 0.8,
+      "id": "minecraft:rotten_flesh"
+    },
+    {
+      "chance": 0.05,
+      "id": "minecraft:porkchop"
+    },
+    {
+      "chance": 0.05,
+      "id": "minecraft:chicken"
+    },
+    {
+      "chance": 0.05,
+      "id": "minecraft:beef"
+    },
+    {
+      "chance": 0.05,
+      "id": "minecraft:mutton"
+    }
+  ]
+}

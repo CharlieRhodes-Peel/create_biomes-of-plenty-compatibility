@@ -48,8 +48,10 @@ public class CreateBopCompatibilityMod {
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
 
-    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
+    // ------- ITEMS ------
     public static final DeferredItem<Item> ROSE_QUARTZ_NUGGET = ITEMS.registerSimpleItem("rose_quartz_nugget", new Item.Properties());
+    public static final DeferredItem<Item> SULFUR = ITEMS.registerSimpleItem("sulfur", new Item.Properties());
+
 
     // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATE_BOP_BRIDGE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
@@ -58,6 +60,7 @@ public class CreateBopCompatibilityMod {
             .icon(() -> ROSE_QUARTZ_NUGGET.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(ROSE_QUARTZ_NUGGET.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(SULFUR.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
