@@ -14,6 +14,9 @@
   "item.create_bop_bridge.rose_quartz_nugget": "Rose Quartz Nugget",
   "item.create_bop_bridge.sulfur": "Sulfur",
   "item.create_bop_bridge.sulfuric_bone_meal": "Sulfuric Bone Meal",
+  "item.create_bop_bridge.black_sandpaper": "Black Sandpaper",
+  "item.create_bop_bridge.orange_sandpaper": "Orange Sandpaper",
+  "item.create_bop_bridge.white_sandpaper": "White Sandpaper",
   "itemGroup.create_bop_bridge": "Create-BoP Bridge",
 
   "block.create_bop_bridge.sulfuric_acid": "Sulfuric Acid",

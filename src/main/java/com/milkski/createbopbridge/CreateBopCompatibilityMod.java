@@ -4,6 +4,7 @@ import com.milkski.createbopbridge.fluids.ModFluidTypes;
 import com.milkski.createbopbridge.fluids.ModFluids;
 import com.milkski.createbopbridge.fluids.SulfuricAcidBlock;
 import com.milkski.createbopbridge.items.SulfuricBoneMealItem;
+import com.simibubi.create.content.equipment.sandPaper.SandPaperItem;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.LiquidBlock;
 import org.slf4j.Logger;
@@ -45,18 +46,14 @@ public class CreateBopCompatibilityMod {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-
     // ------- ITEMS ------
     public static final DeferredItem<Item> ROSE_QUARTZ_NUGGET = ITEMS.registerSimpleItem("rose_quartz_nugget", new Item.Properties());
     public static final DeferredItem<Item> SULFUR = ITEMS.registerSimpleItem("sulfur", new Item.Properties());
     public static final DeferredItem<Item> SULFURIC_BONE_MEAL = ITEMS.register("sulfuric_bone_meal", () -> new SulfuricBoneMealItem(new Item.Properties()));
-    public static final DeferredItem<Item> WHITE_SANDPAPER = ITEMS.registerSimpleItem("white_sandpaper", new Item.Properties());
-    public static final DeferredItem<Item> ORANGE_SANDPAPER = ITEMS.registerSimpleItem("orange_sandpaper", new Item.Properties());
-    public static final DeferredItem<Item> BLACK_SANDPAPER = ITEMS.registerSimpleItem("black_sandpaper", new Item.Properties());
+
+    public static final DeferredItem<Item> WHITE_SANDPAPER = ITEMS.register("white_sandpaper",() -> new SandPaperItem(new Item.Properties()));
+    public static final DeferredItem<Item> ORANGE_SANDPAPER = ITEMS.register("orange_sandpaper",() -> new SandPaperItem(new Item.Properties()));
+    public static final DeferredItem<Item> BLACK_SANDPAPER = ITEMS.register("black_sandpaper",() -> new SandPaperItem(new Item.Properties()));
 
 
 
@@ -120,9 +117,6 @@ public class CreateBopCompatibilityMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
-
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -138,13 +132,6 @@ public class CreateBopCompatibilityMod {
         LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
 
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
-    }
-
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(EXAMPLE_BLOCK_ITEM);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
