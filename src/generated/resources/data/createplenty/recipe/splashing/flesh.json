@@ -7,27 +7,27 @@
   ],
   "results": [
     {
-      "chance": 0.75,
+      "chance": 0.6,
       "id": "minecraft:rotten_flesh"
     },
     {
-      "chance": 0.05,
+      "chance": 0.07,
       "id": "minecraft:porkchop"
     },
     {
-      "chance": 0.05,
+      "chance": 0.07,
       "id": "minecraft:chicken"
     },
     {
-      "chance": 0.05,
+      "chance": 0.07,
       "id": "minecraft:beef"
     },
     {
-      "chance": 0.05,
+      "chance": 0.07,
       "id": "minecraft:mutton"
     },
     {
-      "chance": 0.05,
+      "chance": 0.12,
       "id": "minecraft:spider_eye"
     }
   ]
