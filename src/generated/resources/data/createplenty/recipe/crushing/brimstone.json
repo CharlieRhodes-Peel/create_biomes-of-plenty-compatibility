@@ -1,0 +1,21 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:brimstone"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "createplenty:sulfur"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "minecraft:gold_nugget"
+    }
+  ]
+}

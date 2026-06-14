@@ -1,0 +1,25 @@
+{
+  "itemGroup.examplemod": "Don't know how to remove this TAB yet",
+  "block.examplemod.example_block": "Example Block",
+  "item.examplemod.example_item": "Example Item",
+
+  "examplemod.configuration.title": "Example Mod Configs",
+  "examplemod.configuration.section.examplemod.common.toml": "Example Mod Configs",
+  "examplemod.configuration.section.examplemod.common.toml.title": "Example Mod Configs",
+  "examplemod.configuration.items": "Item List",
+  "examplemod.configuration.logDirtBlock": "Log Dirt Block",
+  "examplemod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "examplemod.configuration.magicNumber": "Magic Number",
+
+  "item.createplenty.rose_quartz_nugget": "Rose Quartz Nugget",
+  "item.createplenty.sulfur": "Sulfur",
+  "item.createplenty.sulfuric_bone_meal": "Sulfuric Bone Meal",
+  "itemGroup.createplenty": "Create: Plenty O' Recipes",
+
+  "block.createplenty.sulfuric_acid": "Sulfuric Acid",
+  "item.createplenty.sulfuric_acid_bucket": "Bucket of Sulfuric Acid",
+  "fluid_type.createplenty.sulfuric_acid_type": "Sulfuric Acid",
+
+  "death.attack.sulfuric_acid": "%1$s dissolved in sulfuric acid",
+  "death.attack.sulfuric_acid.player": "%1$s dissolved in sulfuric acid while trying to escape %2$s"
+}

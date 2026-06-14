@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "createplenty:rose_quartz_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "createplenty:rose_quartz_from_nuggets"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "createplenty:rose_quartz_from_nuggets"
+    ]
+  }
+}

@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "create_bop_bridge:black_sandpaper",
-    "create_bop_bridge:orange_sandpaper",
-    "create_bop_bridge:white_sandpaper"
+    "createplenty:black_sandpaper",
+    "createplenty:orange_sandpaper",
+    "createplenty:white_sandpaper"
   ]
 }

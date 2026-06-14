@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    { "item": "createplenty:sulfur" },
+    { "item": "createplenty:sulfur" },
+    { "item": "createplenty:sulfur" },
+    { "item": "createplenty:sulfur" },
+    {
+      "type": "neoforge:single",
+      "amount": 1000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "id": "createplenty:sulfuric_acid",
+      "amount": 1000
+    }
+  ]
+}

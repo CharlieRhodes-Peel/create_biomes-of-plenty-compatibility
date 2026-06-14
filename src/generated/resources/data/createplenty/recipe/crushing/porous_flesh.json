@@ -1,0 +1,21 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "biomesoplenty:porous_flesh"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "minecraft:rotten_flesh"
+    },
+    {
+      "chance": 0.10,
+      "count": 1,
+      "id": "minecraft:bone_meal"
+    }
+  ]
+}
